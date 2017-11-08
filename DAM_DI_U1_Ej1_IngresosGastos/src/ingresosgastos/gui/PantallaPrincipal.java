@@ -5,6 +5,9 @@
  */
 package ingresosgastos.gui;
 
+import ingresosgastos.logica.LogicaNegocio;
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author PCCOM
@@ -16,6 +19,25 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        // Favicon
+        this.setIconImage(new ImageIcon(getClass().getResource("/ingresosgastos/gui/imgs/favicon.png")).getImage());
+
+        this.calcularBalance();
+    }
+
+    /**
+     * Metodo para calcular el balance,
+     * se la llama al iniciar el frame y al pulsar en addOperacion
+     */
+    private void calcularBalance() {
+        // Refrescar valor balance
+        float balance = LogicaNegocio.calcularBalance();
+        jLabelBalance.setForeground(new java.awt.Color(87, 166, 57));
+        if (balance < 0) {
+            jLabelBalance.setForeground(new java.awt.Color(254, 0, 0));
+        }
+
+        jLabelBalance.setText("Tu saldo es: " + balance);
     }
 
     /**
@@ -30,11 +52,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItemNuevoGasto = new javax.swing.JMenuItem();
-        jMenuItemListaIngresos = new javax.swing.JMenuItem();
-        jMenuItemListaGastos = new javax.swing.JMenuItem();
+        jPanelBotones = new javax.swing.JPanel();
+        jButtonNuevo = new javax.swing.JButton();
+        jButtonGastos = new javax.swing.JButton();
+        jButtonIngresos = new javax.swing.JButton();
+        jLabelBalance = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
@@ -46,43 +69,85 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jMenu1.setText("Archivo");
+        jPanelBotones.setLayout(new java.awt.GridLayout(1, 3, 10, 0));
 
-        jMenuItemNuevoGasto.setText("Nuevo gasto ...");
-        jMenuItemNuevoGasto.addActionListener(new java.awt.event.ActionListener() {
+        jButtonNuevo.setText("Nueva operacion");
+        jButtonNuevo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemNuevoGastoActionPerformed(evt);
+                jButtonNuevoActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItemNuevoGasto);
+        jPanelBotones.add(jButtonNuevo);
 
-        jMenuItemListaIngresos.setText("Lista de ingresos ...");
-        jMenu1.add(jMenuItemListaIngresos);
+        jButtonGastos.setText("Informe de gastos");
+        jButtonGastos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonGastosActionPerformed(evt);
+            }
+        });
+        jPanelBotones.add(jButtonGastos);
 
-        jMenuItemListaGastos.setText("Lista de gastos ...");
-        jMenu1.add(jMenuItemListaGastos);
+        jButtonIngresos.setText("Informe de ingresos");
+        jButtonIngresos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonIngresosActionPerformed(evt);
+            }
+        });
+        jPanelBotones.add(jButtonIngresos);
 
-        jMenuBar1.add(jMenu1);
-
-        setJMenuBar(jMenuBar1);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ingresosgastos/gui/imgs/icon.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 498, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 319, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addComponent(jPanelBotones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jLabelBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItemNuevoGastoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevoGastoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItemNuevoGastoActionPerformed
+    private void jButtonNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNuevoActionPerformed
+
+        // Creamos un obj. del tipo de dialogo que vamos a abrir
+        // Los dos parametros, es el jFrame padre y si es modal o no
+        DialogoNuevo addGasto = new DialogoNuevo(this, true);
+        addGasto.setVisible(true);
+        this.calcularBalance();
+
+    }//GEN-LAST:event_jButtonNuevoActionPerformed
+
+    private void jButtonGastosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGastosActionPerformed
+        DialogoListadoGastos verGastos = new DialogoListadoGastos(this, true);
+        verGastos.setVisible(true);
+    }//GEN-LAST:event_jButtonGastosActionPerformed
+
+    private void jButtonIngresosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresosActionPerformed
+        DialogoListadoIngresos verIngresos = new DialogoListadoIngresos(this, true);
+        verIngresos.setVisible(true);
+    }//GEN-LAST:event_jButtonIngresosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -120,13 +185,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonGastos;
+    private javax.swing.JButton jButtonIngresos;
+    private javax.swing.JButton jButtonNuevo;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelBalance;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItemListaGastos;
-    private javax.swing.JMenuItem jMenuItemListaIngresos;
-    private javax.swing.JMenuItem jMenuItemNuevoGasto;
+    private javax.swing.JPanel jPanelBotones;
     // End of variables declaration//GEN-END:variables
 }

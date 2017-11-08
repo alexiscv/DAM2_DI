@@ -1,5 +1,6 @@
 package ingresosgastos.dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -7,21 +8,25 @@ import java.util.Date;
  * @author Alexis
  */
 public class Operacion {
-    
+
     private Date fecha;
     private String concepto;
-    private double importe;
+    private float importe;
+    private int tipoOperacion; // 0 = gasto, 1 = ingreso
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
 
     /**
-     * COntrutor
+     * Construtor
+     *
      * @param fecha
      * @param concepto
-     * @param importe 
+     * @param importe
      */
-    public Operacion(Date fecha, String concepto, double importe) {
+    public Operacion(Date fecha, String concepto, float importe, int tipoOperacion) {
         this.fecha = fecha;
         this.concepto = concepto;
         this.importe = importe;
+        this.tipoOperacion = tipoOperacion;
     }
 
     public Date getFecha() {
@@ -44,23 +49,33 @@ public class Operacion {
         return importe;
     }
 
-    public void setImporte(double importe) {
+    public void setImporte(float importe) {
         this.importe = importe;
+    }
+
+    public int getTipoOperacion() {
+        return tipoOperacion;
+    }
+
+    public void setTipoOperacion(int tipoOperacion) {
+        this.tipoOperacion = tipoOperacion;
     }
 
     /**
      * Método que devuelve un array de Strings
-     * @return 
+     *
+     * @return
      */
-    public String[] toArrayString(){
-        
+    public String[] toArrayString() {
+
         String[] s = new String[3];
-        s[0] = fecha.toString();
+        
+        s[0] = sdf.format(fecha);
         s[1] = concepto;
-        //s[2] = importe;
-        
+        s[2] = Float.toString(importe);
+
         return s;
-        
+
     }
-    
+
 }

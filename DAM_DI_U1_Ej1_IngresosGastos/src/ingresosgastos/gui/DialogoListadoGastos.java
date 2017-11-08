@@ -5,6 +5,9 @@
  */
 package ingresosgastos.gui;
 
+import ingresosgastos.dto.Operacion;
+import ingresosgastos.logica.LogicaNegocio;
+import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -19,20 +22,30 @@ public class DialogoListadoGastos extends javax.swing.JDialog {
     public DialogoListadoGastos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        
+
         this.inicializarTabla(); // Iniciamos la tabla despues de cargar componentes
-        
+
     }
 
     /**
-     * Inicializar la tabla
-     * Método que crea las columnas usando un modelo propio
+     * Inicializar la tabla Método que crea las columnas usando un modelo propio
      */
     private void inicializarTabla() {
 
         DefaultTableModel dtm = new DefaultTableModel();
         dtm.setColumnIdentifiers(new String[]{"Fecha", "Concepto", "Importe"});
         jTableListadoGastos.setModel(dtm);
+
+        // Cargamos los datos en la tabla
+        // Creamos una lista con la lista de la logica de negocio y la recorremos
+        ArrayList<Operacion> operaciones = LogicaNegocio.getOperaciones();
+        for (Operacion operacion : operaciones) {
+            
+            if (operacion.getTipoOperacion() == 0) {
+                dtm.addRow(operacion.toArrayString());
+            }
+
+        }
 
     }
 

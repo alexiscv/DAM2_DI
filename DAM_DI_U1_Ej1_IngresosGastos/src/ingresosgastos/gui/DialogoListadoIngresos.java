@@ -5,6 +5,11 @@
  */
 package ingresosgastos.gui;
 
+import ingresosgastos.dto.Operacion;
+import ingresosgastos.logica.LogicaNegocio;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author PCCOM
@@ -17,8 +22,29 @@ public class DialogoListadoIngresos extends javax.swing.JDialog {
     public DialogoListadoIngresos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        this.inicializarTabla();
     }
 
+    /**
+     * Función para iniciar nuestra tabla con las columnas que queramos
+     */
+    private void inicializarTabla(){
+        DefaultTableModel dtm = new DefaultTableModel();
+        dtm.setColumnIdentifiers(new String[]{"Fecha", "Concepto", "Importe"});
+        jTableIngresos.setModel(dtm);
+
+        // Cargamos los datos en la tabla
+        // Creamos una lista con la lista de la logica de negocio y la recorremos
+        ArrayList<Operacion> operaciones = LogicaNegocio.getOperaciones();
+        for (Operacion operacion : operaciones) {
+            
+            if (operacion.getTipoOperacion() == 1) {
+                dtm.addRow(operacion.toArrayString());
+            }
+
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,11 +55,11 @@ public class DialogoListadoIngresos extends javax.swing.JDialog {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jTableIngresos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTableIngresos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -44,7 +70,7 @@ public class DialogoListadoIngresos extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jTableIngresos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,6 +136,6 @@ public class DialogoListadoIngresos extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTableIngresos;
     // End of variables declaration//GEN-END:variables
 }
