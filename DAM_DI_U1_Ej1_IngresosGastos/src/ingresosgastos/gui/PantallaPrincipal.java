@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
 
 /**
  *
- * @author PCCOM
+ * @author Alexis
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
@@ -37,7 +37,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             jLabelBalance.setForeground(new java.awt.Color(254, 0, 0));
         }
 
-        jLabelBalance.setText("Tu saldo es: " + balance);
+        jLabelBalance.setText("Tu saldo es: " + balance + " €");
     }
 
     /**
@@ -140,12 +140,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNuevoActionPerformed
 
     private void jButtonGastosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGastosActionPerformed
-        DialogoListadoGastos verGastos = new DialogoListadoGastos(this, true);
+        DialogoListado verGastos = new DialogoListado(this, true, 0);
         verGastos.setVisible(true);
     }//GEN-LAST:event_jButtonGastosActionPerformed
 
     private void jButtonIngresosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonIngresosActionPerformed
-        DialogoListadoIngresos verIngresos = new DialogoListadoIngresos(this, true);
+        DialogoListado verIngresos = new DialogoListado(this, true, 1);
         verIngresos.setVisible(true);
     }//GEN-LAST:event_jButtonIngresosActionPerformed
 

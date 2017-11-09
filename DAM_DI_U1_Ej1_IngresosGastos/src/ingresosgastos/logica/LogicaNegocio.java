@@ -29,8 +29,6 @@ public class LogicaNegocio {
     }
 
     public static float calcularBalance() {
-        
-        System.out.println("calcularndo balance");
 
         float totalGastos = 0;
         float totalIngresos = 0;
