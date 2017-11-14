@@ -5,6 +5,11 @@
  */
 package conversordivisas.gui;
 
+import conversordivisas.beans.Divisa;
+import conversordivisas.logica.LogicaNegocio;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+
 /**
  *
  * @author angel
@@ -21,8 +26,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     
     public void cargarDivisas(){
         
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Divisa 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Penes 1", "Item 2", "Item 3", "Item 4" }));
+        // Leemos el arrayList
+        ArrayList<Divisa> divisas = LogicaNegocio.listadoDivisas();
+        
+        // Creamos el modelo
+        DefaultComboBoxModel dcm = new DefaultComboBoxModel<>();
+        
+        // Recorremos el array list cargando en el modelo los valores
+        for (Divisa divisa : divisas) {
+            dcm.addElement(divisa);
+        }
+        
+        // Cargamos el modelo en los ComboBox
+        jComboBox1.setModel(dcm);
+        jComboBox2.setModel(dcm);
         
     }
 
@@ -44,7 +61,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButtonConvertir = new javax.swing.JButton();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        jMenuItemNueva = new javax.swing.JMenuItem();
+        jMenuItemSalir = new javax.swing.JMenuItem();
 
         jMenu1.setText(org.openide.util.NbBundle.getMessage(PantallaPrincipal.class, "PantallaPrincipal.jMenu1.text")); // NOI18N
         jMenuBar1.add(jMenu1);
@@ -63,10 +81,24 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButtonConvertir.setText(org.openide.util.NbBundle.getMessage(PantallaPrincipal.class, "PantallaPrincipal.jButtonConvertir.text")); // NOI18N
 
         jMenu3.setText(org.openide.util.NbBundle.getMessage(PantallaPrincipal.class, "PantallaPrincipal.jMenu3.text")); // NOI18N
-        jMenuBar2.add(jMenu3);
 
-        jMenu4.setText(org.openide.util.NbBundle.getMessage(PantallaPrincipal.class, "PantallaPrincipal.jMenu4.text")); // NOI18N
-        jMenuBar2.add(jMenu4);
+        jMenuItemNueva.setText(org.openide.util.NbBundle.getMessage(PantallaPrincipal.class, "PantallaPrincipal.jMenuItemNueva.text")); // NOI18N
+        jMenuItemNueva.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemNuevaActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItemNueva);
+
+        jMenuItemSalir.setText(org.openide.util.NbBundle.getMessage(PantallaPrincipal.class, "PantallaPrincipal.jMenuItemSalir.text")); // NOI18N
+        jMenuItemSalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemSalirActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItemSalir);
+
+        jMenuBar2.add(jMenu3);
 
         setJMenuBar(jMenuBar2);
 
@@ -100,6 +132,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemSalirActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItemSalirActionPerformed
+
+    private void jMenuItemNuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNuevaActionPerformed
+        DialogoNuevaDivisa pantallaNueva = new DialogoNuevaDivisa(this, true);
+        pantallaNueva.setVisible(true);
+    }//GEN-LAST:event_jMenuItemNuevaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,8 +185,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuItem jMenuItemNueva;
+    private javax.swing.JMenuItem jMenuItemSalir;
     // End of variables declaration//GEN-END:variables
 }
