@@ -5,16 +5,19 @@
  */
 package conversordivisas.beans;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 /**
  *
  * @author Alexis
  */
-public class Divisa {
-    
-    String nombre;
-    double valor; // respecto al €
+public class Divisa implements Comparable<Divisa>, Serializable {
 
-    public Divisa(String nombre, double valor) {
+    String nombre;
+    float valor; // respecto al €
+
+    public Divisa(String nombre, float valor) {
         this.nombre = nombre;
         this.valor = valor;
     }
@@ -31,19 +34,49 @@ public class Divisa {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(float valor) {
         this.valor = valor;
     }
-    
-    private String[] toArrayString(){
-        
+
+    private String[] toArrayString() {
+
         String[] s = new String[2];
-        
+
         s[0] = nombre;
         s[1] = Double.toString(valor);
-        
+
         return s;
-        
+
     }
-    
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 29 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Divisa other = (Divisa) obj;
+        if (!Objects.equals(this.nombre, other.nombre)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int compareTo(Divisa d) {
+        return this.nombre.compareTo(d.nombre); // devuelve 1,-1 o 0
+    }
+
 }

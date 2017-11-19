@@ -5,6 +5,10 @@
  */
 package conversordivisas.gui;
 
+import conversordivisas.beans.Divisa;
+import conversordivisas.logica.LogicaNegocio;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import org.netbeans.validation.api.builtin.stringvalidation.StringValidators;
 import org.netbeans.validation.api.ui.ValidationGroup;
 
@@ -20,6 +24,30 @@ public class DialogoNuevaDivisa extends javax.swing.JDialog {
     public DialogoNuevaDivisa(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+
+        // Deshabilitamos el botón de enviar
+        jButtonAdd.setEnabled(false);
+
+        // Validamos
+        ValidationGroup grupo = validationPanelErrores.getValidationGroup();
+        grupo.add(jTextFieldNombre, StringValidators.REQUIRE_NON_EMPTY_STRING);
+
+        // Creamos un lisener para que si hay un cambio, se valide el formulario
+        // Si el formulario tiene errores el botón enviar continua apagado
+        validationPanelErrores.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                if (validationPanelErrores.getProblem() == null) {
+                    jButtonAdd.setEnabled(true);
+
+                } else {
+                    jButtonAdd.setEnabled(false);
+
+                }
+
+            }
+        });
+
     }
 
     /**
@@ -34,11 +62,11 @@ public class DialogoNuevaDivisa extends javax.swing.JDialog {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
-        jTextFieldValor = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jSpinnerValor = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton1 = new javax.swing.JButton();
+        jButtonAdd = new javax.swing.JButton();
         validationPanelErrores = new org.netbeans.validation.api.ui.swing.ValidationPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -47,9 +75,9 @@ public class DialogoNuevaDivisa extends javax.swing.JDialog {
 
         jTextFieldNombre.setText(org.openide.util.NbBundle.getMessage(DialogoNuevaDivisa.class, "DialogoNuevaDivisa.jTextFieldNombre.text")); // NOI18N
 
-        jTextFieldValor.setText(org.openide.util.NbBundle.getMessage(DialogoNuevaDivisa.class, "DialogoNuevaDivisa.jTextFieldValor.text")); // NOI18N
-
         jLabel2.setText(org.openide.util.NbBundle.getMessage(DialogoNuevaDivisa.class, "DialogoNuevaDivisa.jLabel2.text")); // NOI18N
+
+        jSpinnerValor.setModel(new javax.swing.SpinnerNumberModel(0.0f, null, null, 1.0f));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -62,9 +90,8 @@ public class DialogoNuevaDivisa extends javax.swing.JDialog {
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextFieldValor)
-                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                    .addComponent(jSpinnerValor)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -76,16 +103,16 @@ public class DialogoNuevaDivisa extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                    .addComponent(jSpinnerValor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         jLabel3.setText(org.openide.util.NbBundle.getMessage(DialogoNuevaDivisa.class, "DialogoNuevaDivisa.jLabel3.text")); // NOI18N
 
-        jButton1.setText(org.openide.util.NbBundle.getMessage(DialogoNuevaDivisa.class, "DialogoNuevaDivisa.jButton1.text")); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdd.setText(org.openide.util.NbBundle.getMessage(DialogoNuevaDivisa.class, "DialogoNuevaDivisa.jButtonAdd.text")); // NOI18N
+        jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAddActionPerformed(evt);
             }
         });
 
@@ -104,7 +131,7 @@ public class DialogoNuevaDivisa extends javax.swing.JDialog {
                         .addGap(22, 22, 22))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(validationPanelErrores, javax.swing.GroupLayout.PREFERRED_SIZE, 288, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap())))
         );
@@ -118,85 +145,40 @@ public class DialogoNuevaDivisa extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jButtonAdd)
                 .addGap(18, 18, 18)
                 .addComponent(validationPanelErrores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+    private void jButtonAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAddActionPerformed
+
         // Cuando pulsemos el botón añadir, 
-        // validaremos los datos introducidos y despues crearemos al nueva divisa
-        // Además la grabaremos en un fichero para tener persistencia
-        
-        // 1.- Validamos
-        ValidationGroup grupo = validationPanelErrores.getValidationGroup();
-        grupo.add(jTextFieldNombre, StringValidators.REQUIRE_NON_EMPTY_STRING);
-        grupo.add(jTextFieldValor, );
-        
-        // 2.- Creamos el obj. y refrescamos el ArrayList
-        
-        // 3.- Grabamos en el fichero la colección de divisas
-        
-        
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        // Crearemos el obj, o añadiremos al List y grabaremos en un fichero para tener persistencia
+        // 1.- Creamos el obj. y refrescamos el ArrayList
+        Divisa d = new Divisa(jTextFieldNombre.getText(), (float) jSpinnerValor.getValue());
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(DialogoNuevaDivisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(DialogoNuevaDivisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(DialogoNuevaDivisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(DialogoNuevaDivisa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        // 2.- Grabamos en el fichero la colección de divisas
+        LogicaNegocio.addDivisa(d);
+        
+        // Cerramos la ventana
+        dispose();
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                DialogoNuevaDivisa dialog = new DialogoNuevaDivisa(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    }//GEN-LAST:event_jButtonAddActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonAdd;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSpinner jSpinnerValor;
     private javax.swing.JTextField jTextFieldNombre;
-    private javax.swing.JTextField jTextFieldValor;
     private org.netbeans.validation.api.ui.swing.ValidationPanel validationPanelErrores;
     // End of variables declaration//GEN-END:variables
 }
