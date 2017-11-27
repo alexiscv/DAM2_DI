@@ -39,8 +39,12 @@ public class TemporizadorPanel extends javax.swing.JPanel {
             int inicio = Integer.parseInt(jTextFieldInicio.getText());
             File f = new File(jTextFieldImagen.getText());
             String texto = jTextFieldTexto.getText();
-            //Color color = Color.decode(jTextFieldColor.getText());
-            Color color = red;
+            Color color = Color.decode(jTextFieldColor.getText());
+            //Color color = red;
+            
+            System.out.println("Esto si:"+color);
+            System.out.println("esto no:"+Color.decode("#FFFFFF"));
+            
             decimales = jCheckBox1.isSelected();
 
             return new Temporizador(inicio, texto, color, decimales, f);

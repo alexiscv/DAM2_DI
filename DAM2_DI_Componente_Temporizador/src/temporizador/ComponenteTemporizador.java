@@ -5,11 +5,14 @@
  */
 package temporizador;
 
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.Serializable;
-import static java.lang.Thread.sleep;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.Timer;
 
 /**
  *
@@ -18,41 +21,56 @@ import javax.swing.JLabel;
 public class ComponenteTemporizador extends JLabel implements Serializable {
 
     private Temporizador temporizador;
+    boolean detener = false;
 
     // Constructor vacío
     // Dentro del constructor programamos la lógica de nuestro componente
     public ComponenteTemporizador() {
 
-        // Pruebas, veo valores actuales
-        System.out.println("Inicio = " + temporizador.getInicio());
+        setText("-- GO! --");
+        setOpaque(true); // Hacemos que sea OPACO para que se vea el BackgroundColor
 
-        this.setText(String.valueOf(temporizador.getInicio()));
+        Timer timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-        // Vamos disminuyendo el número con un for
-        // e imprimiendolo por pantalla
-        for (int i = 0; i < 100; i++) {
+                if (temporizador != null) {
 
-            try {
-                sleep(1000);
-                temporizador.setInicio(temporizador.getInicio() - 1);
-                super.setText(String.valueOf(temporizador.getInicio()));
-                System.out.println("valor de inicio: " + temporizador.getInicio());
+                    if (temporizador.getInicio() > 0) {
+                        // Imprimimos el valor por pantalla
+                        if (temporizador.getMostrarDecimales()) {
+                            float num = temporizador.getInicio();
+                            setText(Float.toString(num));
+                        } else {
+                            setText(Integer.toString(temporizador.getInicio()));
 
-            } catch (InterruptedException ex) {
-                Logger.getLogger(ComponenteTemporizador.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        // Llamamos al método que hace la cuenta atrás cada 1 segundo
+                        disminuirTiempo();
+
+                    } else {
+                        // Si la cuenta atras ha terminado
+                        // 1.- Imprimimos el texto de finalización en el JLabel
+                        // 2.- Añadimos la imagen de finalización
+                        // 3.- Ponemos el color de fondo de finalización
+                        setText(temporizador.getTextoFinal());
+                        setBackground(temporizador.getColorFinal());
+                        setIcon(new javax.swing.ImageIcon((Image) (Icon) temporizador.getImagenFinal()));
+
+                        // Paramos el Listener Timer
+                        Thread.currentThread().stop();
+
+                    }
+
+                } else {
+                    System.out.println("----->>>> TEMPORIZADOR ES NULL");
+                }
+
             }
 
-        }
+        });
 
-        // Si la cuenta atras ha terminado
-        // 1.- Imprimimos el texto de fi nalización en el JLabel
-        // 2.- Añadimos la imagen de finalización
-        // 3.- Ponemos el color de fondo de finalización
-        if (temporizador.getInicio() == 0) {
-            System.out.println("Imprimo texto final: " + temporizador.getTextoFinal());
-            super.setText(temporizador.getTextoFinal());
-            super.setBackground(temporizador.getColorFinal());
-        }
+        timer.start();
 
     }
 
@@ -65,4 +83,10 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
         this.temporizador = temporizador;
     }
 
+    // Métodos
+    private void disminuirTiempo() {
+
+        temporizador.setInicio(temporizador.getInicio() - 1);
+
+    }
 }
