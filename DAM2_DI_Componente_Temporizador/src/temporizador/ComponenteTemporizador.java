@@ -18,6 +18,7 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
 
     private Temporizador temporizador;
     boolean detener = false;
+    private FinalListener finalListener;
 
     // Constructor vacío
     // Dentro del constructor programamos la lógica de nuestro componente
@@ -93,7 +94,7 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
                         }
 
                         // Paramos el Timer
-                        this.cancel();
+                        cancel();
 
                     }
 
@@ -104,5 +105,23 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
             }
         }, 0, frecuencia);
 
+    }
+
+    /**
+     *
+     * Añadimos un método para que quien use nuestro componente pueda definir el
+     * arrastreListener
+     *
+     * @param arrastreListener
+     */
+    public void addFinalListener(FinalListener finalListener) {
+        this.finalListener = finalListener;
+    }
+
+    /**
+     * También añadimos un método para cargarnos el arrastreListener
+     */
+    public void removeFinalListener() {
+        this.finalListener = null;
     }
 }
