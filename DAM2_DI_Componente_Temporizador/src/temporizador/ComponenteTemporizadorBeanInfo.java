@@ -9,7 +9,7 @@ import java.beans.*;
 
 /**
  *
- * @author Alexis
+ * @author angel
  */
 public class ComponenteTemporizadorBeanInfo extends SimpleBeanInfo {
 

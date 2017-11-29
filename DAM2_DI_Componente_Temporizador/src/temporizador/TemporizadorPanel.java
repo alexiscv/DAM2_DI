@@ -6,7 +6,6 @@
 package temporizador;
 
 import java.awt.Color;
-import static java.awt.Color.red;
 import java.io.File;
 import javax.swing.JFileChooser;
 
@@ -30,27 +29,29 @@ public class TemporizadorPanel extends javax.swing.JPanel {
      */
     public Temporizador getValoresSeleccionados() {
 
+        // Nos protegemos contra un posible nullPointerEception
+        Color color = null;
+        String texto = "";
+        double inicio = 0;
         boolean decimales = false;
 
-        // Compriobamos que los valores no estén vacios
-        // para evitar un nullPointerEception
-        if (!jTextFieldColor.equals("") && !jTextFieldImagen.equals("") && !jTextFieldInicio.equals("") && !jTextFieldTexto.equals("")) {
-
-            int inicio = Integer.parseInt(jTextFieldInicio.getText());
-            File f = new File(jTextFieldImagen.getText());
-            String texto = jTextFieldTexto.getText();
-            Color color = Color.decode(jTextFieldColor.getText());
-            //Color color = red;
-            
-            System.out.println("Esto si:"+color);
-            System.out.println("esto no:"+Color.decode("#FFFFFF"));
-            
-            decimales = jCheckBox1.isSelected();
-
-            return new Temporizador(inicio, texto, color, decimales, f);
-        } else {
-            return null;
+        if (!jTextFieldColor.getText().equals("")) {
+            color = Color.decode(jTextFieldColor.getText());
         }
+
+        File f = null;
+        if (!jTextFieldImagen.getText().equals("")) {
+            f = new File(jTextFieldImagen.getText());
+
+        }
+
+        inicio = Double.parseDouble(jTextFieldInicio.getText());
+        texto = jTextFieldTexto.getText();
+
+        decimales = jCheckBox1.isSelected();
+
+        // Retornamos el obj temporizador creado
+        return new Temporizador(inicio, texto, color, decimales, f);
 
     }
 

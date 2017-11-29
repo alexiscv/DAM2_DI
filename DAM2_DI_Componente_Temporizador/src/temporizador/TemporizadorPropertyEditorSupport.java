@@ -8,7 +8,6 @@ package temporizador;
 import java.awt.Color;
 import java.awt.Component;
 import java.beans.PropertyEditorSupport;
-import java.io.File;
 
 /**
  *
@@ -63,16 +62,32 @@ public class TemporizadorPropertyEditorSupport extends PropertyEditorSupport {
 
         Temporizador temporizador = temporizadorPanel.getValoresSeleccionados();
 
-        int inicio = temporizador.getInicio();
+        // Nos protegemos contra un posible nullPointerEception
+        Color color = null;
+        String texto = "";
+        double inicio = 0;
+        boolean decimales = false;
 
-        String ruta = temporizador.getImagenFinal().getAbsolutePath();
-        ruta = ruta.replace("\\", "\\\\");
+        String ruta = "null";
+        if (temporizador.getImagenFinal() != null) {
+            ruta = temporizador.getImagenFinal().getAbsolutePath();
+            ruta = ruta.replace("\\", "\\\\");
+            ruta = "new java.io.File(\"" + ruta + "\")";
 
-        String texto = temporizador.getTextoFinal();
-        Color color = temporizador.getColorFinal();
-        boolean decimales = temporizador.getMostrarDecimales();
+        }
 
-        String cadena = "new temporizador.Temporizador(" + inicio + ", \"" + texto + "\", new java.awt.Color(" + color.getRGB() + "), " + decimales + ", new java.io.File(\"" + ruta + "\"))";
+        String cadenaColor = "null";
+        if (temporizador.getColorFinal() != null) {
+            color = temporizador.getColorFinal();
+            cadenaColor = "new java.awt.Color(" + color.getRGB() + ")";
+
+        }
+
+        inicio = temporizador.getInicio();
+        texto = temporizador.getTextoFinal();
+        decimales = temporizador.getMostrarDecimales();
+
+        String cadena = "new temporizador.Temporizador(" + inicio + ", \"" + texto + "\", " + cadenaColor + ", " + decimales + ", " + ruta + ")";
         return cadena;
     }
 

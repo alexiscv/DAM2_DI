@@ -13,28 +13,38 @@ import java.io.Serializable;
  *
  * @author Alexis
  */
-public class Temporizador implements Serializable{
+public class Temporizador implements Serializable {
 
-    int inicio;
-    String textoFinal;
-    Color colorFinal;
-    Boolean mostrarDecimales;
-    File imagenFinal;
+    private double inicio;           // Aquí almacenamos el numero donde iniciamos la cuenta atrás
+    private double tiempoRestante;   // Aquí almacenamos el tiempo según se va descontando
+    private String textoFinal;
+    private Color colorFinal;
+    private Boolean mostrarDecimales;
+    private File imagenFinal;
 
-    public Temporizador(int inicio, String textoFinal, Color colorFinal, Boolean mostrarDecimales, File imagenFinal) {
+    public Temporizador(double inicio, String textoFinal, Color colorFinal, Boolean mostrarDecimales, File imagenFinal) {
         this.inicio = inicio;
         this.textoFinal = textoFinal;
         this.colorFinal = colorFinal;
         this.mostrarDecimales = mostrarDecimales;
         this.imagenFinal = imagenFinal;
+        this.tiempoRestante = inicio;
     }
 
-    public int getInicio() {
+    public double getInicio() {
         return inicio;
     }
 
-    public void setInicio(int inicio) {
+    public void setInicio(double inicio) {
         this.inicio = inicio;
+    }
+
+    public double getTiempoRestante() {
+        return tiempoRestante;
+    }
+
+    public void setTiempoRestante(double tiempoRestante) {
+        this.tiempoRestante = tiempoRestante;
     }
 
     public String getTextoFinal() {
