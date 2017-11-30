@@ -18,6 +18,7 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
 
     private Temporizador temporizador;
     boolean detener = false;
+    double tiempo;
     private FinalListener finalListener;
 
     // Constructor vacío
@@ -38,8 +39,6 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
     // Métodos
     private void disminuirTiempo() {
 
-        double tiempo = temporizador.getTiempoRestante();
-
         if (temporizador.getMostrarDecimales()) {
             tiempo = tiempo - 0.1;
 
@@ -48,12 +47,13 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
 
         }
 
-        temporizador.setTiempoRestante(tiempo);
-
     }
 
     public void iniciarTemporizador() {
 
+        // Cargamos desde el que comenzamos
+        tiempo = temporizador.getInicio();
+        
         setOpaque(true); // Hacemos que sea OPACO para que se vea el BackgroundColor
 
         // Frecuencia de refresco
@@ -71,9 +71,14 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
 
                 if (temporizador != null) {
 
-                    if (temporizador.getTiempoRestante() > 0) {
+                    if (tiempo > 0) {
                         // Imprimimos el valor por pantalla
-                        setText(Double.toString(temporizador.getTiempoRestante()));
+                        // Imprimimos el valor por pantalla
+                        if (temporizador.getMostrarDecimales()) {
+                            setText(String.format("%.1f", tiempo));
+                        } else {
+                            setText(String.format("%.0f", tiempo));
+                        }
 
                         // Llamamos al método que hace la cuenta atrás cada 1 segundo
                         disminuirTiempo();
@@ -91,6 +96,11 @@ public class ComponenteTemporizador extends JLabel implements Serializable {
 
                         if (temporizador.getImagenFinal() != null) {
                             setIcon(new javax.swing.ImageIcon(temporizador.getImagenFinal().getAbsolutePath()));
+                        }
+
+                        // Llamamos a nuestro Listener si este no es null
+                        if (finalListener != null) {
+                            finalListener.fin();
                         }
 
                         // Paramos el Timer
