@@ -1,0 +1,7 @@
+Abrimos la terminal aquí con shift boton derecho
+
+
+escribimos
+C:\Users\angel\Desktop\jh2.0\javahelp\bin\jhindexer html
+
+yasta!

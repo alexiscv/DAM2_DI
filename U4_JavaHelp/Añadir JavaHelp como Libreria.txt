@@ -1,0 +1,6 @@
+1.- Tools / Librerias -> New Library
+2.- Añadir Jar -> jh2.0/javahelp/lib/jhall.jar
+3.- Pestaña fuentes -> Añadir jar
+4.- jh2.0/src.jar
+5.- Pestaña Javadoc -> Añadir jar
+6.- Añadir la carpeta doc
