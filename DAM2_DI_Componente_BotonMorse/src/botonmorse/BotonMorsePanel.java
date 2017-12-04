@@ -26,10 +26,19 @@ public class BotonMorsePanel extends javax.swing.JPanel {
      */
     public BotonMorse getValoresPanel() {
 
-        int duracionPulsacionCorta = Integer.decode(pulsacionCorta.getText());
-        int duracionPulsacionLarga = Integer.decode(pulsacionLarga.getText());
+        // Para evitar un NullPointerException
+        int duracionPulsacionCorta = 0;
+        int duracionPulsacionLarga = 0;
+
+        if (!pulsacionCorta.getText().equals("")) {
+            duracionPulsacionCorta = Integer.decode(pulsacionCorta.getText());
+        }
+        if (!pulsacionLarga.getText().equals("")) {
+            duracionPulsacionLarga = Integer.decode(pulsacionLarga.getText());
+        }
 
         if (duracionPulsacionCorta > 0 && duracionPulsacionLarga > duracionPulsacionCorta) {
+            System.out.println("Creamos el obj.");
             return new BotonMorse(duracionPulsacionCorta, duracionPulsacionLarga);
 
         } else {
@@ -48,18 +57,14 @@ public class BotonMorsePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabelDuracionCorta = new javax.swing.JLabel();
+        jLabelDuracionLarga = new javax.swing.JLabel();
         pulsacionCorta = new javax.swing.JTextField();
         pulsacionLarga = new javax.swing.JTextField();
 
-        jLabel1.setText("Duración pulsación corta:");
+        jLabelDuracionCorta.setText("Duración pulsación corta:");
 
-        jLabel2.setText("Duración pulsación larga:");
-
-        pulsacionCorta.setText("jTextField1");
-
-        pulsacionLarga.setText("jTextField2");
+        jLabelDuracionLarga.setText("Duración pulsación larga:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -68,24 +73,24 @@ public class BotonMorsePanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(76, 76, 76)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabelDuracionLarga)
+                    .addComponent(jLabelDuracionCorta))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pulsacionCorta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pulsacionLarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pulsacionCorta)
+                    .addComponent(pulsacionLarga, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
+                    .addComponent(jLabelDuracionCorta)
                     .addComponent(pulsacionCorta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
+                    .addComponent(jLabelDuracionLarga)
                     .addComponent(pulsacionLarga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(185, Short.MAX_VALUE))
         );
@@ -93,8 +98,8 @@ public class BotonMorsePanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelDuracionCorta;
+    private javax.swing.JLabel jLabelDuracionLarga;
     private javax.swing.JTextField pulsacionCorta;
     private javax.swing.JTextField pulsacionLarga;
     // End of variables declaration//GEN-END:variables

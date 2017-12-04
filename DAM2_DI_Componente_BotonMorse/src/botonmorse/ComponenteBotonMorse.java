@@ -29,42 +29,46 @@ public class ComponenteBotonMorse extends JButton implements Serializable {
 
             long inicioPulsacion;
             long finPulsacion;
-            String codigo;
+            String codigo = "";
 
             @Override
             public void mouseClicked(MouseEvent e) {
 
                 // Al hacer clic, calculamos la diferencia entre
                 // el momento de presionar y el momento de soltar
-                // y añadimos si es un . o un - al código
+                // y añadimos el . o la -
                 long duracion = finPulsacion - inicioPulsacion;
 
                 // SI es un .
-                if (duracion < botonMorse.getDuracionPulsacionLarga()) {
+                if (duracion < botonMorse.getDuracionPulsacionCorta()) {
 
-                    codigo = codigo + "1";
-
-                } // SI es una -
-                else if (duracion <= botonMorse.getDuracionPulsacionLarga()) {
-
-                    codigo = codigo + "0";
-
-                } // Si la tiene una pulsación mayor, reseteamos el código
-                else {
-
-                    codigo = "";
+                    codigo = codigo + ".";
 
                 }
+                // SI es una -
+                if (duracion > botonMorse.getDuracionPulsacionLarga()) {
 
+                    codigo = codigo + "-";
+
+                }
+                
+                System.out.print(codigo);
+                
                 // Buscamos coincidencias con el código actual
-                if (!buscarLetra(codigo).equals("")) {
-                    // Si ha retornado un caracter, lo retornamos por consola
-                    System.out.println(buscarLetra(codigo));
+                // Siempre que este no sea vacio
+                if (!codigo.equals("")) {
+                    if (!buscarLetra(codigo).equals("")) {
+                        // Si ha retornado un caracter, lo retornamos por consola
+                        System.out.println(buscarLetra(codigo));
+                        
+                        // Reseteamos el código
+                        codigo = "";
 
-                    // Y llamaos al Listener, por si el usuarioProgramador
-                    // Quiere hacer algo con este evento
-                    if (letraListener != null) {
-                        letraListener.letraDetectada();
+                        // Y llamaos al Listener, por si el usuarioProgramador
+                        // Quiere hacer algo con este evento
+                        if (letraListener != null) {
+                            letraListener.letraDetectada();
+                        }
                     }
                 }
 
@@ -99,23 +103,22 @@ public class ComponenteBotonMorse extends JButton implements Serializable {
     }
 
     /**
-     * Retorna una letra a partir de un código morse los códigos morse están
-     * basados en 1 y 0 1 es un . 0 una -
+     * Retorna una letra a partir de un código morse
      *
      * @param codigo
      */
     public String buscarLetra(String codigo) {
 
-        if (codigo.equals("10")) {
+        if (codigo.equals(".-")) {
             return "A";
         }
-        if (codigo.equals("01")) {
+        if (codigo.equals("-.")) {
             return "N";
         }
-        if (codigo.equals("11")) {
+        if (codigo.equals("..")) {
             return "I";
         }
-        if (codigo.equals("00")) {
+        if (codigo.equals("--")) {
             return "M";
         }
 
@@ -139,6 +142,24 @@ public class ComponenteBotonMorse extends JButton implements Serializable {
      */
     public LetraListener removeLetraListener() {
         return null;
+    }
+
+    /**
+     * Getter para la propiedad botonMorse
+     *
+     * @return
+     */
+    public BotonMorse getBotonMorse() {
+        return botonMorse;
+    }
+
+    /**
+     * Setter para la propiedad botonMorse
+     *
+     * @return
+     */
+    public void setBotonMorse(BotonMorse botonMorse) {
+        this.botonMorse = botonMorse;
     }
 
 }
