@@ -1,0 +1,26 @@
+AÑADIR LA LIBRERIA
+
+Herramientas > Librerias
+Nueva Libreria
+Add Jar
+/netbeans-8.2/ide/modules/ext/ValidationAPI.jar
+/netbeans-8.2/platform/lib/org-openide-util-lookup.jar
+/netbeans-8.2/platform/lib/org-openide-util.jar
+
+---
+AÑADIR AL PROYECTO
+
+Luego vamos a Propiedades del proyecto
+Añadir Libreria, y la añadimos
+
+---
+AÑADIR EL COMPONENTE
+
+Botón derecho sobre la paleta
+Paletter Mannger
+Add desde la libreria / Add from Library
+-> ValidationPanel
+Next > Swing Containers > Finish > Close
+
+
+* Nota: Boton derecho > Propiedades en un compoenente y completar el campo Name
