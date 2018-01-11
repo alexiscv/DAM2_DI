@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Windows Desktop
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAM_DI_U5_HolaMundo", "DAM_DI_U5_HolaMundo\DAM_DI_U5_HolaMundo.csproj", "{4C1F8E44-2E61-4019-873A-F84AF7D1C510}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C1F8E44-2E61-4019-873A-F84AF7D1C510}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1F8E44-2E61-4019-873A-F84AF7D1C510}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1F8E44-2E61-4019-873A-F84AF7D1C510}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1F8E44-2E61-4019-873A-F84AF7D1C510}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

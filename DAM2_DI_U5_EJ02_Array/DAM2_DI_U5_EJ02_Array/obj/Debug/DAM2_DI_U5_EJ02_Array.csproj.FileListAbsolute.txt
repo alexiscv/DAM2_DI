@@ -1,0 +1,6 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ02_Array\DAM2_DI_U5_EJ02_Array\bin\Debug\DAM2_DI_U5_EJ02_Array.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ02_Array\DAM2_DI_U5_EJ02_Array\bin\Debug\DAM2_DI_U5_EJ02_Array.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ02_Array\DAM2_DI_U5_EJ02_Array\bin\Debug\DAM2_DI_U5_EJ02_Array.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ02_Array\DAM2_DI_U5_EJ02_Array\obj\Debug\DAM2_DI_U5_EJ02_Array.csprojResolveAssemblyReference.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ02_Array\DAM2_DI_U5_EJ02_Array\obj\Debug\DAM2_DI_U5_EJ02_Array.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ02_Array\DAM2_DI_U5_EJ02_Array\obj\Debug\DAM2_DI_U5_EJ02_Array.pdb

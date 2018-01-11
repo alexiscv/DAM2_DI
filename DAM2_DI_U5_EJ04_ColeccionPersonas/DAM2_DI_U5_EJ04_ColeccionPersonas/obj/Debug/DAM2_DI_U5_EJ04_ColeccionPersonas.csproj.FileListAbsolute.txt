@@ -1,0 +1,5 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ04_ColeccionPersonas\DAM2_DI_U5_EJ04_ColeccionPersonas\bin\Debug\DAM2_DI_U5_EJ04_ColeccionPersonas.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ04_ColeccionPersonas\DAM2_DI_U5_EJ04_ColeccionPersonas\bin\Debug\DAM2_DI_U5_EJ04_ColeccionPersonas.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ04_ColeccionPersonas\DAM2_DI_U5_EJ04_ColeccionPersonas\bin\Debug\DAM2_DI_U5_EJ04_ColeccionPersonas.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ04_ColeccionPersonas\DAM2_DI_U5_EJ04_ColeccionPersonas\obj\Debug\DAM2_DI_U5_EJ04_ColeccionPersonas.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ04_ColeccionPersonas\DAM2_DI_U5_EJ04_ColeccionPersonas\obj\Debug\DAM2_DI_U5_EJ04_ColeccionPersonas.pdb

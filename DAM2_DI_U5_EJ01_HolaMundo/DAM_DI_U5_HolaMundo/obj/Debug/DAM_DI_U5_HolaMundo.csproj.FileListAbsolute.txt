@@ -1,0 +1,6 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM_DI_U5_HolaMundo\DAM_DI_U5_HolaMundo\bin\Debug\DAM_DI_U5_HolaMundo.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM_DI_U5_HolaMundo\DAM_DI_U5_HolaMundo\bin\Debug\DAM_DI_U5_HolaMundo.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM_DI_U5_HolaMundo\DAM_DI_U5_HolaMundo\bin\Debug\DAM_DI_U5_HolaMundo.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM_DI_U5_HolaMundo\DAM_DI_U5_HolaMundo\obj\Debug\DAM_DI_U5_HolaMundo.csprojResolveAssemblyReference.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM_DI_U5_HolaMundo\DAM_DI_U5_HolaMundo\obj\Debug\DAM_DI_U5_HolaMundo.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM_DI_U5_HolaMundo\DAM_DI_U5_HolaMundo\obj\Debug\DAM_DI_U5_HolaMundo.pdb

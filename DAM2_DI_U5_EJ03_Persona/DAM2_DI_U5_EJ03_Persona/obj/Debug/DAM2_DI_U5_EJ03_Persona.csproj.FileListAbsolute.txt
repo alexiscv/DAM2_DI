@@ -1,0 +1,6 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ03_Persona\DAM2_DI_U5_EJ03_Persona\bin\Debug\DAM2_DI_U5_EJ03_Persona.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ03_Persona\DAM2_DI_U5_EJ03_Persona\obj\Debug\DAM2_DI_U5_EJ03_Persona.csprojResolveAssemblyReference.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ03_Persona\DAM2_DI_U5_EJ03_Persona\bin\Debug\DAM2_DI_U5_EJ03_Persona.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ03_Persona\DAM2_DI_U5_EJ03_Persona\bin\Debug\DAM2_DI_U5_EJ03_Persona.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ03_Persona\DAM2_DI_U5_EJ03_Persona\obj\Debug\DAM2_DI_U5_EJ03_Persona.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ03_Persona\DAM2_DI_U5_EJ03_Persona\obj\Debug\DAM2_DI_U5_EJ03_Persona.pdb
