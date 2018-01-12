@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DAM2_DI_U5_EJ04_ColeccionPersonas
 {
-    class Persona
+    public class Persona
     {
 
         private String _nombre;
@@ -28,7 +28,9 @@ namespace DAM2_DI_U5_EJ04_ColeccionPersonas
             set { _edad = value; }
         }
 
-        // Contructor
+        // Contructores
+        public Persona() { } // Es contructor es para poder persistir la información
+
         public Persona(String nombre, String apellidos, int edad)
         {
 

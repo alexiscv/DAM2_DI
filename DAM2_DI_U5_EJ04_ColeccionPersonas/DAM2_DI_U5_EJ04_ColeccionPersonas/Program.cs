@@ -27,11 +27,15 @@ namespace DAM2_DI_U5_EJ04_ColeccionPersonas
         static void Main(string[] args)
         {
 
+            // Cargamos los datos antes de comenzar
+            Logica.cargarDatos();
+
             // Ejecutaremos la aplicación en bucle hasta que el usuario quiera guardar y salir.
             bool cerrar = false;
 
             while (!cerrar)
             {
+
                 // Mostramos el menú
                 mostrarMenu();
 
@@ -66,6 +70,7 @@ namespace DAM2_DI_U5_EJ04_ColeccionPersonas
                     case 5:
                         // Guardar y salir
                         System.Console.WriteLine(".. Guardando datos");
+                        Logica.guardarDatos();
                         System.Console.WriteLine(".. Cerrando");
                         cerrar = true;
                         break;

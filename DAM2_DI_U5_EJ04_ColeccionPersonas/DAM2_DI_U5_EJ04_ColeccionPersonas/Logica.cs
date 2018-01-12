@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,6 +100,59 @@ namespace DAM2_DI_U5_EJ04_ColeccionPersonas
             // Notificamos
             Console.WriteLine("--> Listado ordenado correctamente.");
             Console.WriteLine(" ");
+
+        }
+
+        // Guardar Datos
+        public static void guardarDatos()
+        {
+
+            // Para mas info: 
+            // https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file
+            // Documentación oficial de MS.
+
+            System.Xml.Serialization.XmlSerializer writer = new System.Xml.Serialization.XmlSerializer(typeof(List<Persona>));
+            var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//listadoPersonas.xml";
+            System.IO.FileStream file = System.IO.File.Create(path);
+
+            // Añadimos las personas
+            writer.Serialize(file, listaPersonas);
+
+            // Cerramos el fichero
+            file.Close();
+
+            // Notificamos
+            Console.WriteLine("--> Datos guardados correctamente.");
+            Console.WriteLine(" ");
+
+        }
+
+        // Guardar Datos
+        public static void cargarDatos()
+        {
+
+            String f = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//listadoPersonas.xml";
+
+            if (File.Exists(f))
+            {
+                // Para mas info: 
+                // https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file
+                // Documentación oficial de MS.
+
+                // Now we can read the serialized book ...  
+                System.Xml.Serialization.XmlSerializer reader = new System.Xml.Serialization.XmlSerializer(typeof(List<Persona>));
+                System.IO.StreamReader file = new System.IO.StreamReader(f);
+                listaPersonas = (List<Persona>)reader.Deserialize(file);
+                file.Close();
+
+                // Notificamos
+                Console.WriteLine("--> Datos cargados correctamente.");
+                Console.WriteLine(" ");
+            }
+            else
+            {
+                Console.WriteLine("-- No hay información que recuperar --");
+            }
 
         }
 
