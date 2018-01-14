@@ -1,0 +1,13 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\bin\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.exe.config
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\bin\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.exe
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\bin\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.pdb
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.csprojResolveAssemblyReference.cache
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\MainWindow.baml
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\MainWindow.g.cs
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\App.g.cs
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\DAM2_DI_U5_WPF_EJ03_Bindings_MarkupCompile.cache
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.g.resources
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.Properties.Resources.resources
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.csproj.GenerateResource.Cache
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.exe
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_WPF_EJ03_Bindings\DAM2_DI_U5_WPF_EJ03_Bindings\obj\Debug\DAM2_DI_U5_WPF_EJ03_Bindings.pdb

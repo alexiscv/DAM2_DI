@@ -1,0 +1,13 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\bin\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\bin\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\bin\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.csprojResolveAssemblyReference.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\MainWindow.baml
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\MainWindow.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\App.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo_MarkupCompile.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.g.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.Properties.Resources.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.csproj.GenerateResource.Cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ01_HolaMundo\DAM2_DI_U5_WPF_EJ01_HolaMundo\obj\Debug\DAM2_DI_U5_WPF_EJ01_HolaMundo.pdb

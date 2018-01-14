@@ -1,0 +1,15 @@
+﻿<Window x:Class="DAM2_DI_U5_WPF_EJ04_AppLibros.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <DataGrid ItemsSource="{Binding Path=listaLibros}" x:Name="dataGridLibros" Margin="10,36,10,0" VerticalAlignment="Top" Height="235"/>
+        <Menu Height="21" VerticalAlignment="Top">
+            <MenuItem Header="Archivo">
+                <MenuItem Header="Nuevo.." Height="21" Width="200" Click="MenuItem_Click_1"/>
+            </MenuItem>
+        </Menu>
+        <Button x:Name="botonModificar" Content="Modificar" Margin="432,289,10,0" VerticalAlignment="Top" Click="botonModificar_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,24 @@
+﻿<Window x:Class="DAM2_DI_U5_WPF_EJ03_Bindings.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="459.108" Width="525">
+    <Grid Height="319" VerticalAlignment="Top">
+        <Label x:Name="labelPrueba" Content="{Binding ElementName=textoPrueba, Path=Text}" HorizontalAlignment="Left" Margin="176,22,0,0" VerticalAlignment="Top" Width="310"/>
+        <TextBox x:Name="textoPrueba" HorizontalAlignment="Left" Height="23" Margin="35,22,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ComboBoxPersonas" HorizontalAlignment="Left" ItemsSource="{Binding Path=listaPersonas}" Margin="35,63,0,0" VerticalAlignment="Top" Width="355"/>
+        <Button x:Name="botonNuevo" Content="Nuevo" HorizontalAlignment="Left" Margin="411,63,0,0" VerticalAlignment="Top" Width="75" Click="botonNuevo_Click"/>
+        <ListBox x:Name="listaPrueba" ItemsSource="{Binding Path=listaPersonas}" HorizontalAlignment="Left" Height="100" Margin="35,104,0,0" VerticalAlignment="Top" Width="355"/>
+        <!-- Ejemplo de tabla con binding y autoCollums -->
+        <DataGrid ItemsSource="{Binding Path=listaPersonas}" AutoGenerateColumns="true" x:Name="tablaPrueba" HorizontalAlignment="Left" Margin="35,223,0,-84" VerticalAlignment="Top" Height="180" Width="216"/>
+        
+        <!-- Ejemplo de tabla con binding y columnas personalizadas -->
+        <DataGrid ItemsSource="{Binding Path=listaPersonas}" AutoGenerateColumns="false" HorizontalAlignment="Left" Margin="274,223,0,-84" VerticalAlignment="Top" Height="180" Width="212">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="tablaPrueba2" Header="NOMBRE" Binding="{Binding Path=Nombre}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="botonModificar" Content="Moficiar" HorizontalAlignment="Left" Margin="411,104,0,0" VerticalAlignment="Top" Width="75" Click="botonModificar_Click"/>
+        <Button x:Name="botonEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="411,144,0,0" VerticalAlignment="Top" Width="75" Background="#FFFB3838" Click="botonEliminar_Click"/>
+
+    </Grid>
+</Window>

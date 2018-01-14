@@ -1,0 +1,13 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\bin\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.csprojResolveAssemblyReference.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\MainWindow.baml
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\MainWindow.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\App.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox_MarkupCompile.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.g.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.Properties.Resources.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.csproj.GenerateResource.Cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\bin\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\bin\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_WPF_EJ02_ComboBox\DAM2_DI_U5_WPF_EJ02_ComboBox\obj\Debug\DAM2_DI_U5_WPF_EJ02_ComboBox.pdb
