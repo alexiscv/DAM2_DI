@@ -1,0 +1,15 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\bin\Debug\DAM2_DI_U5_EJ_Agenda.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\bin\Debug\DAM2_DI_U5_EJ_Agenda.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\bin\Debug\DAM2_DI_U5_EJ_Agenda.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DAM2_DI_U5_EJ_Agenda.csprojResolveAssemblyReference.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\MainWindow.baml
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\MainWindow.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\App.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DAM2_DI_U5_EJ_Agenda_MarkupCompile.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DAM2_DI_U5_EJ_Agenda.g.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DAM2_DI_U5_EJ_Agenda.Properties.Resources.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DAM2_DI_U5_EJ_Agenda.csproj.GenerateResource.Cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DAM2_DI_U5_EJ_Agenda.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DAM2_DI_U5_EJ_Agenda.pdb
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DialogoEditar.baml
+C:\Users\angel\Documents\Visual Studio 2012\Projects\DAM2_DI_U5_EJ_Agenda\DAM2_DI_U5_EJ_Agenda\obj\Debug\DialogoEditar.g.cs

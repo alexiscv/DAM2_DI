@@ -1,0 +1,21 @@
+﻿<Window x:Class="DAM2_DI_U5_EJ_Agenda.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Calendar IsTodayHighlighted="false" x:Name="calendario" SelectedDatesChanged="actualizarTareas" SelectionMode="MultipleRange" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="DataGridTareas" ItemsSource="{Binding Path=tareasFecha}" AutoGenerateColumns="False" MouseDoubleClick="abrirEditarEliminar" Margin="194,10,10,0" VerticalAlignment="Top" Height="299">
+
+            <DataGrid.Columns>
+
+                <DataGridTextColumn x:Name="Nombre" Header="Tarea" Binding="{Binding Nombre}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Texto" Header="Descripción" Binding="{Binding Texto}" IsReadOnly="True"/>
+                <DataGridTextColumn x:Name="Fecha" Header="Fecha" Binding="{Binding Fecha}" IsReadOnly="True"/>
+
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        <Button x:Name="botonNuevo" Content="Nueva" HorizontalAlignment="Left" Margin="10,183,0,0" VerticalAlignment="Top" Width="179" Click="botonNuevo_Click"/>
+
+    </Grid>
+</Window>
