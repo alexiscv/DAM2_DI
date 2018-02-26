@@ -1,0 +1,15 @@
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\bin\Debug\DAM2_DI_U5_EJ_Examen.exe.config
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\bin\Debug\DAM2_DI_U5_EJ_Examen.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\bin\Debug\DAM2_DI_U5_EJ_Examen.pdb
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DAM2_DI_U5_EJ_Examen.csprojResolveAssemblyReference.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DialogoPersona.baml
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\MainWindow.baml
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DialogoPersona.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\MainWindow.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\App.g.cs
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DAM2_DI_U5_EJ_Examen_MarkupCompile.cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DAM2_DI_U5_EJ_Examen.g.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DAM2_DI_U5_EJ_Examen.Properties.Resources.resources
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DAM2_DI_U5_EJ_Examen.csproj.GenerateResource.Cache
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DAM2_DI_U5_EJ_Examen.exe
+c:\users\angel\documents\visual studio 2012\Projects\DAM2_DI_U5_EJ_Examen\DAM2_DI_U5_EJ_Examen\obj\Debug\DAM2_DI_U5_EJ_Examen.pdb
